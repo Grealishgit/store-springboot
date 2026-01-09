@@ -15,7 +15,7 @@ public class StoreApplication {
 	@Bean
 	public CommandLineRunner run() {
 		return args -> {
-			var orderService = new OrderService(new StripePaymentService());
+			var orderService = new OrderService(new PayPalPaymentService());
 			orderService.placeOrder();
 		};
 	}
